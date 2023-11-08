@@ -69,11 +69,31 @@ def dynamic_crop(pil_img):
             break
         crop_bottom += 1
 
-    pil_img = pil_img.resize((min(pil_img.width, 512), min(pil_img.height, 512)))
-
     print(f"{pil_img}, {crop_left}, {crop_right}, {crop_top}, {crop_bottom}")
 
-    return pil_img, crop_left, crop_right, crop_top, crop_bottom
+    response = crop_to_512(pil_img)
+    return pil_img, crop_left + response[1], crop_right + response[2], crop_top + response[3], crop_bottom + response[4]
+
+def crop_to_512(image):
+
+    # Определяем размеры изображения
+    width, height = image.size
+
+    # Вычисляем размеры для обрезки
+    left = (width - min(width, height)) // 2
+    top = (height - min(width, height)) // 2
+    right = left + min(width, height)
+    bottom = top + min(width, height)
+
+    # Обрезаем изображение до квадрата
+    cropped_image = image.crop((left, top, right, bottom))
+
+    # Изменяем размер до 512x512
+    resized_image = cropped_image.resize((512, 512))
+
+
+    # Возвращаем обрезанное и измененное изображение и параметры обрезки
+    return resized_image, left, right, top, bottom
 
 
 def dynamic_padding(pil_img):
