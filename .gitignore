@@ -215,4 +215,6 @@ pyrightconfig.json
 
 */train
 */valid
-# /test
+*/test
+data.yaml
+README.*
