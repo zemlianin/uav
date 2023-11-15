@@ -2,7 +2,7 @@ from ultralytics import YOLO
 import torch
 import glob
  
-model = YOLO("runs/detect/train5/weights/best.pt")  # загрузите предварительно обученную модель YOLOv8n
+model = YOLO("runs/detect/train3/weights/best.pt")  # загрузите предварительно обученную модель YOLOv8n
 
 
 path_test= "test/images"

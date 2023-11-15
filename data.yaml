@@ -1,13 +1,13 @@
-train: ./train/images/
-val: ./valid/images/
-test: ./test/images/
+train: ../datasets/train/images
+val: ../datasets/valid/images
+test: ../datasets/test/images
 
-nc: 8
-names: ['ART', 'BRT', 'DST', 'HEL', 'LBT', 'PLN', 'REB', 'TNK']
+nc: 10
+names: ['ART', 'BRT', 'DST', 'GHM', 'HEL', 'HMN', 'LBT', 'PLN', 'REB', 'TNK']
 
 roboflow:
   workspace: uav-cmkao
   project: uav-6oylx
-  version: 2
+  version: 3
   license: CC BY 4.0
-  url: https://universe.roboflow.com/uav-cmkao/uav-6oylx/dataset/2
+  url: https://universe.roboflow.com/uav-cmkao/uav-6oylx/dataset/3

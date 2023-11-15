@@ -1,7 +1,7 @@
 task: detect
 mode: train
-model: yolov8n.pt
-data: data.yaml
+model: runs/detect/train4/weights/best.pt
+data: ./data.yaml
 epochs: 10
 patience: 50
 batch: 16
@@ -95,4 +95,4 @@ mixup: 0.0
 copy_paste: 0.0
 cfg: null
 tracker: botsort.yaml
-save_dir: runs\detect\train5
+save_dir: /home/chooisfox/Documents/mil-prjects/uav/runs/detect/train5

@@ -2,7 +2,7 @@ from ultralytics import YOLO
  
 model = YOLO("yolov8n.pt")  # загрузите предварительно обученную модель YOLOv8n
  
-model.train(data="./data.yaml", epochs=10)  # обучите модель
+model.train(data="./data.yaml", imgsz=640, epochs=10)  # обучите модель
 model.val()  # оцените производительность модели на наборе проверки
 model.export(format="onnx")  # экспортируйте модель в формат ONNX
 
