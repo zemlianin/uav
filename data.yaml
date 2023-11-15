@@ -1,6 +1,13 @@
-train: ./train/images
-val: ./valid/images
-test: ./test/images
+train: ./train/images/
+val: ./valid/images/
+test: ./test/images/
 
-nc: 4
-names: ['apc', 'cars', 'destroyed', 'tank']
+nc: 8
+names: ['ART', 'BRT', 'DST', 'HEL', 'LBT', 'PLN', 'REB', 'TNK']
+
+roboflow:
+  workspace: uav-cmkao
+  project: uav-6oylx
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/uav-cmkao/uav-6oylx/dataset/2
