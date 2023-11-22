@@ -1,6 +1,6 @@
-train: ../datasets/train/images
-val: ../datasets/valid/images
-test: ../datasets/test/images
+train: ../train/images
+val: ../valid/images
+test: ../test/images
 
 nc: 10
 names: ['ART', 'BRT', 'DST', 'GHM', 'HEL', 'HMN', 'LBT', 'PLN', 'REB', 'TNK']

@@ -6,10 +6,10 @@ import supervision as sv
 
 # Directory containing images
 # image_dir = "test_gen/images/"
-image_dir = "../datasets/valid/images/"
+image_dir = "./testing/car-2"
 
 # Load pre-trained YOLOv8 model
-model = YOLO("runs/detect/train4/weights/best.pt")
+model = YOLO("runs/detect/train9/weights/best.pt")
 
 # Define class names
 classes = ['ART', 'BRT', 'DST', 'GHM', 'HEL', 'HMN', 'LBT', 'PLN', 'REB', 'TNK']
@@ -17,8 +17,8 @@ classes = ['ART', 'BRT', 'DST', 'GHM', 'HEL', 'HMN', 'LBT', 'PLN', 'REB', 'TNK']
 # Create a window for display
 cv2.namedWindow("UAV Image Recognition", cv2.WINDOW_NORMAL)
 
-# Iterate through all files in the directory
-for filename in os.listdir(image_dir):
+# Iterate through all files in the directory in ascending order
+for filename in sorted(os.listdir(image_dir)):
     if filename.endswith(".jpg"):
         # Load the image
         image_path = os.path.join(image_dir, filename)
@@ -40,7 +40,6 @@ for filename in os.listdir(image_dir):
             for _, _, confidence, class_id, _
             in detections
         ]
-
 
         # Make sure 'image' is the correct variable
         annotated_frame = box_annotator.annotate(
