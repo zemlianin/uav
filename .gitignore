@@ -2,7 +2,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos
 
 datasets/
-runs/detect/train*
+runs/detect/train?*
 test_results/
 test_gen/
 
