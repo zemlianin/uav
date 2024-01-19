@@ -1,6 +1,11 @@
 # Created by https://www.toptal.com/developers/gitignore/api/macos
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos
 
+datasets/
+runs/detect/train*
+test_results/
+test_gen/
+
 ### macOS ###
 # General
 .DS_Store
