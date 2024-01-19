@@ -9,10 +9,10 @@ import supervision as sv
 image_dir = "./testing/car-2"
 
 # Load pre-trained YOLOv8 model
-model = YOLO("runs/detect/train9/weights/best.pt")
+model = YOLO("runs/detect/train/weights/best.pt")
 
 # Define class names
-classes = ['ART', 'BRT', 'DST', 'GHM', 'HEL', 'HMN', 'LBT', 'PLN', 'REB', 'TNK']
+classes = ['BRT', 'DOM', 'DST', 'GHM', 'HMN', 'LBT']
 
 # Create a window for display
 cv2.namedWindow("UAV Image Recognition", cv2.WINDOW_NORMAL)
