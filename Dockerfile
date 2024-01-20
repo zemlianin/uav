@@ -4,13 +4,16 @@ RUN apt-get update  &&  DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata
     libopencv-dev \
     python3 \
     python3-pip \
+    neovim \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt /app/requirements.txt
 
 RUN pip3 install -r /app/requirements.txt
 
-COPY . /app
+COPY inference_bench.py /app
+COPY yolov8n.py /app
+COPY runs /app
 
 WORKDIR /app
 
