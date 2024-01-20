@@ -3,3 +3,4 @@ numpy
 ultralytics
 tqdm
 opencv-python
+deepsparse
