@@ -12,8 +12,9 @@ COPY requirements.txt /app/requirements.txt
 RUN pip3 install -r /app/requirements.txt
 
 COPY inference_bench.py /app
-COPY yolov8n.py /app
+COPY yolov8n.pt /app
 COPY runs /app
+COPY test_gen /app
 
 WORKDIR /app
 
