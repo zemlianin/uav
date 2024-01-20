@@ -5,7 +5,7 @@ import sys
 from deepsparse import compile_model
 
 model = compile_model(
-    "runs/detect/train9/weights/best.pt"
+    "runs/detect/train/weights/best.pt"
 )  # загрузите предварительно обученную модель YOLOv8n
 
 
