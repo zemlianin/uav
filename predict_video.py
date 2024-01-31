@@ -24,9 +24,15 @@ def process_frame(frame: np.ndarray, _, model) -> np.ndarray:
     detections = sv.Detections.from_ultralytics(results)
     box_annotator = sv.BoxAnnotator(thickness=4, text_thickness=4, text_scale=2)
 
+    if detections:
+        print("==" * 20)
+        print(detections)
+        print(type(detections[0]))
+        print("==" * 20)
+
     labels = [
-        f"{model.names[class_id]} {confidence:0.2f}"
-        for _, _, confidence, class_id, _ in detections
+        f"{model.names[item[0]]} {item[1]:0.2f}"
+        for item in zip(detections.class_id, detections.confidence)
     ]
     frame = box_annotator.annotate(scene=frame, detections=detections, labels=labels)
 
@@ -44,7 +50,7 @@ def predict_video(args) -> None:
     )
 
 
-with Pool(8) as pool:
+with Pool() as pool:
     items = list(TEST_FILES.items())
     for _ in tqdm(pool.imap_unordered(predict_video, items), total=len(items)):
         ...
